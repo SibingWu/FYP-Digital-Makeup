@@ -1,4 +1,12 @@
 data/*
+*.zip
+*/archive/
+facial_segmentation/checkpoints_resnet_weightedCE/*
+# !facial_segmentation/checkpoints_resnet_weightedCE/fcn_model_21.pt
+facial_segmentation/checkpoints_vgg_weightedCE/*
+# !facial_segmentation/checkpoints_vgg_weightedCE/fcn_model_45.pt
+colour_transfer/045000.pt
+colour_transfer/vgg19-dcbb9e9d.pth
 
 .DS_Store
 .idea/

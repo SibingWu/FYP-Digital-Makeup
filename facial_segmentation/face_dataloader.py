@@ -32,15 +32,14 @@ class FaceDataLoader(Dataset):
         imgA_name = os.listdir(self.image_dir)[idx]
         imgA = cv2.imread(f'{self.image_dir}/{imgA_name}')
         imgA = cv2.resize(imgA, (160, 160))
-        imgB_name = os.listdir(self.mask_dir)[idx]
+        imgB_name = f'{imgA_name[:-4]}.png'
         imgB = cv2.imread(f'{self.mask_dir}/{imgB_name}', 0)
         imgB = cv2.resize(imgB, (160, 160))
-        imgB = imgB / 255
+        # imgB = imgB / 255
         imgB = imgB.astype('uint8')
         imgB = onehot(imgB, 19)  # 19个 label ？ 还是18？？
         imgB = imgB.transpose(2, 0, 1)
         imgB = torch.FloatTensor(imgB)
-        #print(imgB.shape)
         if self.transform:
             imgA = self.transform(imgA)    
 
@@ -63,3 +62,4 @@ if __name__ =='__main__':
 
     for test_batch in test_dataloader:
         print(test_batch)
+        

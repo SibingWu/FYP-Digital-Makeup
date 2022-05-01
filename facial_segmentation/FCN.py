@@ -1,8 +1,3 @@
-#!/usr/bin/python
-# -*- encoding: utf-8 -*-
-
-# reference repo: https://github.com/bat67/pytorch-FCN-easiest-demo/blob/master/FCN.py
-
 import torch
 import torch.nn as nn
 from torchvision import models
@@ -196,7 +191,6 @@ Sequential(
   (30): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
 )
 '''
-
 
 if __name__ == "__main__":
     pass

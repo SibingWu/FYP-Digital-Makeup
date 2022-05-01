@@ -60,10 +60,19 @@ def evaluate(img_path, checkpoint_path, result_dir):
 
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     
-    vgg_model = VGGNet(requires_grad=True, show_params=True)
-    fcn_model = FCNs(pretrained_net=vgg_model, n_class=19)  # 19 个 label
-    fcn_model = fcn_model.to(device)
+    # vgg_model = VGGNet(requires_grad=True, show_params=True)
+    # fcn_model = FCNs(pretrained_net=vgg_model, n_class=19)  # 19 个 label
+    # fcn_model = fcn_model.to(device)
     
+    fcn_model = torchvision.models.segmentation.fcn_resnet50(pretrained=True)
+    # replace the classifier with a new one, that has
+    # num_classes which is user-defined
+    num_classes = 19
+    filters_of_last_layer = fcn_model.classifier[4].in_channels
+    filters_of_last_layer_aux = fcn_model.aux_classifier[4].in_channels
+    fcn_model.classifier[4] = nn.Conv2d(filters_of_last_layer, num_classes, kernel_size=(1,1), stride=(1,1))
+    fcn_model.aux_classifier[4] = nn.Conv2d(filters_of_last_layer_aux, num_classes, kernel_size=(1,1), stride=(1,1))
+    fcn_model = fcn_model.to(device)
     
     optimizer = optim.SGD(fcn_model.parameters(), lr=1e-2, momentum=0.7)
 
@@ -87,7 +96,7 @@ def evaluate(img_path, checkpoint_path, result_dir):
         img = torch.unsqueeze(img, 0)
 
         # out = fcn_model(img)[0]
-        output = fcn_model(img)
+        output = fcn_model(img)['out']
         output = torch.sigmoid(output) # output.shape is torch.Size([4, 19, 160, 160])
         print(type(output))
         print(output.shape)
