@@ -59,7 +59,7 @@ def facial_segmentation(img_original_path, img_target_path, facial_feature):
     return img_original, img_source, img_target
 
 
-def colour_transfer(img_original, img_source, img_target):
+def colour_transfer(img_original, img_source, img_target, transfer_process_path=None):
     """
     Apply colour transfer
     Reference: https://github.com/zhaohengyuan1/Color2Embed
@@ -83,7 +83,9 @@ def colour_transfer(img_original, img_source, img_target):
     ax[2].imshow(img_result)
     ax[2].set_title('result')
 
-    fig.savefig('results/source_target_result.png')
+    if transfer_process_path:
+        fig.savefig(transfer_process_path)
+    # fig.savefig('results/source_target_result.png')
     plt.clf()
 
     return img_result
@@ -95,6 +97,7 @@ def main():
     parser.add_argument('--target_image_path', required=True)
     parser.add_argument('--facial_feature', required=True)
     parser.add_argument('--result_path', required=False)
+    parser.add_argument('--transfer_process_path', required=False)
     args = parser.parse_args()
 
     # facial segmentation
@@ -104,7 +107,10 @@ def main():
 
     # colour transfer
     print('Transferring Colour...')
-    img_result = colour_transfer(img_original, img_source, img_target)
+    if args.transfer_process_path:
+        img_result = colour_transfer(img_original, img_source, img_target, args.transfer_process_path)
+    else:
+        img_result = colour_transfer(img_original, img_source, img_target)
 
     plt.imshow(img_result)
     if args.result_path:
