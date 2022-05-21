@@ -1,7 +1,10 @@
 #!/usr/bin/python
 # -*- encoding: utf-8 -*-
 
-# reference repo: https://github.com/Bjarten/early-stopping-pytorch/blob/master/pytorchtools.py
+"""
+reference code:
+https://github.com/Bjarten/early-stopping-pytorch/blob/master/pytorchtools.py
+"""
 
 import numpy as np
 import torch

@@ -1,8 +1,11 @@
 #!/usr/bin/python
 # -*- encoding: utf-8 -*-
 
-# reference repo: https://github.com/zllrunning/face-parsing.PyTorch/blob/master/test.py
-# reference repo: https://www.cxyzjd.com/article/u014453898/92080859
+"""
+reference code:
+https://github.com/zllrunning/face-parsing.PyTorch/blob/master/test.py
+https://www.cxyzjd.com/article/u014453898/92080859
+"""
 
 from logger import setup_logger
 from model import BiSeNet

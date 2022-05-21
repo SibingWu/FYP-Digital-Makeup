@@ -1,3 +1,11 @@
+#!/usr/bin/python
+# -*- encoding: utf-8 -*-
+
+"""
+reference repo:
+https://github.com/bat67/pytorch-FCN-easiest-demo/blob/master/FCN.py
+"""
+
 import torch
 import torch.nn as nn
 from torchvision import models
@@ -7,8 +15,7 @@ import ssl
 
 # to fix "SSL: CERTIFICATE_VERIFY_FAILED" issue
 # https://stackoverflow.com/questions/35569042/ssl-certificate-verify-failed-with-python3#answer-49174340
-ssl._create_default_https_context = ssl._create_unverified_context  
-
+ssl._create_default_https_context = ssl._create_unverified_context
 
 class FCN8s(nn.Module):
 

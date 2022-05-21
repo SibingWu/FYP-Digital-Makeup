@@ -1,7 +1,10 @@
 #!/usr/bin/python
 # -*- encoding: utf-8 -*-
 
-# reference: https://www.codenong.com/4fd4004ae1fd6b1d0a30/
+"""
+reference code:
+https://www.codenong.com/4fd4004ae1fd6b1d0a30/
+"""
 
 import numpy as np
 

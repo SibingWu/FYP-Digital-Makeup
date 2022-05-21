@@ -1,3 +1,8 @@
+"""
+code from:
+https://github.com/zhaohengyuan1/Color2Embed/blob/main/vgg_model.py
+"""
+
 from torchvision import models
 from collections import namedtuple
 import torch

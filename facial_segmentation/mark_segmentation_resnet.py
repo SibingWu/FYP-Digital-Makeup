@@ -1,3 +1,12 @@
+#!/usr/bin/python
+# -*- encoding: utf-8 -*-
+
+"""
+reference code:
+https://github.com/zllrunning/face-parsing.PyTorch/blob/master/test.py
+https://www.cxyzjd.com/article/u014453898/92080859
+"""
+
 import cv2
 import torch
 import numpy as np

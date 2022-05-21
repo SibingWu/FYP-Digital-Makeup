@@ -1,7 +1,10 @@
 #!/usr/bin/python
 # -*- encoding: utf-8 -*-
 
-# reference repo: https://github.com/bat67/pytorch-FCN-easiest-demo/blob/master/train.py
+"""
+reference repo:
+https://github.com/bat67/pytorch-FCN-easiest-demo/blob/master/train.py
+"""
 
 from datetime import datetime
 

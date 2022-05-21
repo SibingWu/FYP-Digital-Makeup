@@ -1,3 +1,8 @@
+"""
+code from:
+https://github.com/zhaohengyuan1/Color2Embed/blob/main/models.py
+"""
+
 import math
 
 import torch

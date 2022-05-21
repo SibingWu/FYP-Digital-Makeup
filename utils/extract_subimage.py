@@ -3,9 +3,9 @@ import cv2
 
 
 def extract_subimage(img, points):
-    '''
+    """
     Reference: http://www.cocoachina.com/articles/74186
-    '''
+    """
     mask = np.zeros((img.shape[0], img.shape[1]))
 
     cv2.fillConvexPoly(mask, points, 1)

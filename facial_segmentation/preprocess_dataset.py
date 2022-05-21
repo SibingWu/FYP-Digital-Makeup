@@ -1,7 +1,10 @@
 #!/usr/bin/python
 # -*- encoding: utf-8 -*-
 
-# reference: https://github.com/zllrunning/face-parsing.PyTorch/blob/master/prepropess_data.py
+"""
+reference code:
+https://github.com/zllrunning/face-parsing.PyTorch/blob/master/prepropess_data.py
+"""
 
 import os.path as osp
 import os

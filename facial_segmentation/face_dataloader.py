@@ -1,8 +1,10 @@
 #!/usr/bin/python
 # -*- encoding: utf-8 -*-
 
-# reference repo: https://github.com/bat67/pytorch-FCN-easiest-demo/blob/master/BagData.py
-
+"""
+reference code:
+https://github.com/bat67/pytorch-FCN-easiest-demo/blob/master/BagData.py
+"""
 
 import os
 
